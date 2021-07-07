@@ -46,7 +46,6 @@ class AddStudentContainer extends Component {
 
 //Map state to props;
 const mapState = (state) => {
-  console.log("from mapState")
   console.log(state);
   return {
     allStudents: state.allStudents,

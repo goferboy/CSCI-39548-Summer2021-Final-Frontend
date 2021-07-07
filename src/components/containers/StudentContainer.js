@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { deleteStudent } from "../../store/actions/actionCreators";
 import { deleteStudentThunk, fetchStudentThunk } from "../../store/thunks";
 import { StudentView } from "../views";
 import { Redirect } from 'react-router-dom';
@@ -9,7 +8,8 @@ class StudentContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      redirect: false
+      redirect: false,
+      showEdit: false
     }
   }
   componentDidMount() {
@@ -24,6 +24,12 @@ class StudentContainer extends Component {
     })
   }
 
+  showEdit = () => {
+    this.setState({
+      showEdit: !this.state.showEdit
+    })
+  }
+
   render() {
     if (this.state.redirect)
       return (<Redirect to="/students"/>);
@@ -31,6 +37,8 @@ class StudentContainer extends Component {
       <StudentView 
         student={this.props.student}
         handleClick={this.handleClick}
+        showEditClick={this.showEdit}
+        showEdit={this.state.showEdit}
       />
     );
   }

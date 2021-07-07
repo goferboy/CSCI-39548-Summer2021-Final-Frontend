@@ -1,6 +1,7 @@
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
+import { EditStudentContainer } from '../containers';
 
 const StudentView = (props) => {
     const {student} = props;
@@ -12,6 +13,16 @@ const StudentView = (props) => {
             ? `${student.campus.name}`
             : "Not attending any school"
         }</p>
+        <div className="edit-form">
+          {
+            props.showEdit
+            ? <EditStudentContainer student={student}/>
+            : <></>
+          }
+        </div>
+        <Button onClick={props.showEditClick} variant="contained" color="primary">
+          Edit Student
+        </Button>
         <Button onClick={props.handleClick} variant="contained" color="primary">
           Delete Student
         </Button>
