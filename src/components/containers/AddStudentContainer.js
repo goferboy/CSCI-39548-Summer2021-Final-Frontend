@@ -35,8 +35,8 @@ class AddStudentContainer extends Component {
 
   render() {
     if (this.state.redirect) { 
-        let newID = parseInt(this.props.allStudents.length);
-        return (<Redirect to={"/student/" + newID} />);
+        let newID = parseInt(this.props.allStudents.length - 1);
+        return (<Redirect to={"/student/" + this.props.allStudents[newID].id} />);
     }
     return (
       <AddStudentView handleSubmit={this.handleSubmit}/>
@@ -46,6 +46,8 @@ class AddStudentContainer extends Component {
 
 //Map state to props;
 const mapState = (state) => {
+  console.log("from mapState")
+  console.log(state);
   return {
     allStudents: state.allStudents,
   };
