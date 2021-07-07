@@ -30,6 +30,10 @@ class StudentContainer extends Component {
     })
   }
 
+  refresh = async () => {
+    await this.props.fetchStudent(this.props.match.params.id);
+  }
+
   render() {
     if (this.state.redirect)
       return (<Redirect to="/students"/>);
@@ -39,6 +43,7 @@ class StudentContainer extends Component {
         handleClick={this.handleClick}
         showEditClick={this.showEdit}
         showEdit={this.state.showEdit}
+        refresh={this.refresh}
       />
     );
   }

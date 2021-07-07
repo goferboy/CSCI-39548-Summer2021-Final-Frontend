@@ -14,7 +14,7 @@ const EditStudentView = (props) => {
                 <label htmlFor="lastname">Last Name: </label>
                 <input type="text" name="lastname" onChange={props.handleChange} value={props.student.lastname} />
             </div>
-            <button id="login-submit">Submit</button>
+            <button id="edit-submit">Submit</button>
             </form>
       </div>
     );

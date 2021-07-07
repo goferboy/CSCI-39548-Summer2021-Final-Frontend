@@ -8,11 +8,8 @@ class EditStudentContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            updatedStudent: this.props.student,
-            redirect: false
+            updatedStudent: this.props.student
         }
-    }
-    componentDidMount() {
     }
     
     handleChange = (event) => {
@@ -22,11 +19,20 @@ class EditStudentContainer extends Component {
         formStudent[inputField] = inputValue;
         console.log(inputField + ": " + inputValue)
         this.setState({updatedStudent: formStudent});
-      }
+    }
+
+    handleSubmit = async (event) => {
+        event.preventDefault();
+        await this.props.editStudent(this.state.updatedStudent);
+        //Trigger showEdit value back to false.
+        this.props.showEdit();
+        //Forces student container to refresh
+        await this.props.refresh();
+    }
 
     render() {
       return (
-        <EditStudentView student={this.state.updatedStudent} handleChange={this.handleChange} handleSubmit=""/>
+        <EditStudentView student={this.state.updatedStudent} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
       );
     }
   }
@@ -47,8 +53,9 @@ class EditStudentContainer extends Component {
   
   // Type check props;
     EditStudentContainer.propTypes = {
-    allCampuses: PropTypes.array.isRequired,
-    fetchAllCampuses: PropTypes.func.isRequired,
+        editStudent: PropTypes.func.isRequired
+    // allCampuses: PropTypes.array.isRequired,
+    // fetchAllCampuses: PropTypes.func.isRequired,
   };
   
   // Export our store-connected container by default;

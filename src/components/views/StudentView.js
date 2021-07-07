@@ -16,7 +16,7 @@ const StudentView = (props) => {
         <div className="edit-form">
           {
             props.showEdit
-            ? <EditStudentContainer student={student}/>
+            ? <EditStudentContainer refresh={props.refresh} showEdit={props.showEditClick} student={student}/>
             : <></>
           }
         </div>
