@@ -1,7 +1,7 @@
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
-import { EditStudentContainer } from '../containers';
+import { EditCampusContainer } from '../containers';
 
 const CampusView = (props) => {
   const {campus} = props;
@@ -22,11 +22,11 @@ const CampusView = (props) => {
           <p>No Student Enrolled</p>
       }
       </ul>
-      {/* {
+      {
         props.showEdit
         ? <EditCampusContainer refresh={props.refresh} showEdit={props.showEditClick} campus={campus}/>
         : <></>
-      } */}
+      }
       <Button onClick={props.showEditClick} variant="contained" color="primary">
         Edit Campus
       </Button>
