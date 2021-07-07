@@ -1,11 +1,3 @@
-# CSCI-39548 - Summer 2021 - Final Project - Backend
+# Starter code for CRUD App
 
-## Deployment link: 
-
-## Group Members
-- ### Henry Baum - Github: [goferboy](https://github.com/goferboy)
-
-## Assignment Details
-
-
-## Technologies Used
+## Client 
