@@ -42,7 +42,6 @@ export const fetchAllStudentsThunk = () => async (dispatch) => {
 
 export const addStudentThunk = (student) => async (dispatch) => {
   try {
-    console.log(student);
     let res = await axios.post(`/api/students`, student);
     dispatch(ac.addStudent(res.data));
   } catch(err) {

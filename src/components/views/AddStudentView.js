@@ -16,8 +16,8 @@ const AddStudentsView = (props) => {
   );
 };
 
-AddStudentsView.propTypes = {
-  allStudents: PropTypes.array.isRequired,
-};
+// AddStudentsView.propTypes = {
+//   allStudents: PropTypes.array.isRequired,
+// };
 
 export default AddStudentsView;
