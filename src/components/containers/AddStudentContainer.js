@@ -3,22 +3,33 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { addStudentThunk } from "../../store/thunks";
 import { AddStudentView } from "../views";
+import { Redirect } from "react-router-dom";
 
 class AddStudentContainer extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            redirect: false
+        }
+    }
   componentDidMount() {
   }
 
   handleSubmit = (event) => {
       event.preventDefault();
-      console.log(event.target.firstname.value + " " + event.target.lastname.value)
     let newStudent = {
         firstname: event.target.firstname.value,
         lastname: event.target.lastname.value
     };
       this.props.addStudent(newStudent);
+      this.setState({
+          redirect: true
+      })
   }
 
   render() {
+    if (this.state.redirect)
+        return (<Redirect to="/students" />);
     return (
       <AddStudentView handleSubmit={this.handleSubmit}/>
     );
