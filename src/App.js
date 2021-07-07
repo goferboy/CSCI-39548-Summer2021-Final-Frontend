@@ -4,6 +4,7 @@ import "./App.css";
 import { Switch, Route } from "react-router-dom";
 //Components
 import {
+  HeaderContainer,
   HomePageContainer,
   CampusContainer,
   StudentContainer,
@@ -19,6 +20,7 @@ import {
 const App = () => {
   return (
     <div className="App">
+      <HeaderContainer />
       <Switch>
         <Route exact path="/" component={HomePageContainer} />
         <Route exact path="/campuses" component={AllCampusesContainer} />

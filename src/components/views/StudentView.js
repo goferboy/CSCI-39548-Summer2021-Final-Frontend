@@ -13,4 +13,4 @@ const StudentView = (props) => {
     );
   };
   
-  export default StudentView;
+export default StudentView;
