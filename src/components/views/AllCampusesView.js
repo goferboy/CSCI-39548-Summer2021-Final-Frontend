@@ -6,7 +6,7 @@ import "../css/AllCampusesView.css";
 
 const AllCampusesView = (props) => {
   if (!props.allCampuses.length) {
-    return <div>There are no campuses.</div>;
+    return <div id="no-campuses"><h1>There are no campuses.</h1></div>;
   }
 
   return (

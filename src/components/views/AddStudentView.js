@@ -19,7 +19,7 @@ const AddStudentsView = (props) => {
   const classes = useStyles();
   return (
     <div id="add-student">
-      <h1>add student</h1>
+      <h1>Add Student</h1>
       <form id="add-student-form" onSubmit={props.handleSubmit}>
         <TextField 
             className={classes.root} 

@@ -12,6 +12,10 @@ a:hover {
     text-decoration: underline;
 }
 
+#no-students {
+    text-align: center;
+}
+
 #all-students {
     display: flex;
     flex-flow: column nowrap;

@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const AllStudentsView = (props) => {
   if (!props.allStudents.length) {
-    return <div>There are no students.</div>;
+    return <div id="no-students"><h1>There are no students.</h1></div>;
   }
 
   return (
