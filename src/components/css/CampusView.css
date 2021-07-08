@@ -1,4 +1,5 @@
 .campus-view {
+    font-family: 'Roboto', sans-serif;;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;

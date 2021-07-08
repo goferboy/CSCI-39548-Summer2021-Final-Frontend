@@ -4,7 +4,14 @@ import { Link } from 'react-router-dom';
 import { EditCampusContainer } from '../containers';
 import '../css/CampusView.css';
 
+const useStyles = makeStyles(theme => ({
+  root: {
+    margin: "15px"
+  }
+}));
+
 const CampusView = (props) => {
+  const classes = useStyles();
   const {campus} = props;
   return (
     <div className="campus-view">
@@ -37,11 +44,11 @@ const CampusView = (props) => {
       }
       </ul>
       <div className="button-menu">
-        <Button onClick={props.showEditClick} variant="contained" 
+        <Button className={classes.root} onClick={props.showEditClick} variant="contained" 
           color={props.showEdit ? "secondary" : "primary"}>
           Edit Campus
         </Button>
-        <Button onClick={props.handleClick} variant="contained" color="primary">
+        <Button className={classes.root} onClick={props.handleClick} variant="contained" color="primary">
           Delete Campus
         </Button>
       </div>

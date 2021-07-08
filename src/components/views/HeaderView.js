@@ -13,11 +13,15 @@ const useStyles = makeStyles(theme => ({
       flexGrow: 1,
       textAlign: 'left',
       fontType: 'bold',
-      fontFamily: 'Courier, sans-serif', 
+      fontFamily: 'Roboto, sans-serif', 
       fontSize: '35px', 
-      color: '#CDDC39'
+      color: 'white'
+    },
+    toolbar: {
+      maxWidth: "900px"
     },
     appBar:{
+      alignItems: "center",
       backgroundColor: '#11153e',
       shadows: ['none'],
     },
@@ -38,10 +42,16 @@ const HeaderView = () => {
   return (
     <div className={classes.root}>
       <AppBar position="static" elevation={0} className={classes.appBar}>
-        <Toolbar>
-          <Typography variant="h6" className={classes.title} color="inherit" >
+        <Toolbar className={classes.toolbar}>
+          <Typography variant="h6" className={classes.title} color="inherit" style={{marginRight: '100px'}}>
             CRUD App
           </Typography>
+
+          <Link className={classes.links} to={'/'} >
+          <Button variant="contained" color="primary" style={{marginRight: '10px'}}>
+              About
+            </Button>
+          </Link>
 
           <Link className={classes.links} to={'/campuses'} >
             <Button variant="contained" color="primary" style={{marginRight: '10px'}}>
@@ -49,7 +59,7 @@ const HeaderView = () => {
             </Button>
           </Link>
 
-          <Link className={classes.links} to={'/students'} >
+          <Link className={classes.links} to={'/students'} style={{marginRight: '10px'}}>
             <Button variant="contained" color="primary">
               All Students
             </Button>
