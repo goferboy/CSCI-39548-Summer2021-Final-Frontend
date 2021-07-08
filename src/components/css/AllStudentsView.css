@@ -1,0 +1,30 @@
+a {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
+}
+
+#all-students {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.student-list {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 400px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.img-list {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
