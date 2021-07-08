@@ -11,7 +11,7 @@ const AddStudentsView = (props) => {
             <input type="text" name="firstname" placeholder="First Name" required />
             <label htmlFor="lastname">Last Name: </label>
             <input type="text" name="lastname" placeholder="Last Name" required />
-            <Button id="edit-submit" variant="contained" color="primary">Submit</Button>
+            <Button type="submit" id="edit-submit" variant="contained" color="primary">Submit</Button>
         </form>
     </div>
   );
