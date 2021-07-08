@@ -1,0 +1,14 @@
+.campus-view {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.campus-text {
+
+}
+
+.campus-img {
+    width: 60vw;
+    max-width: 800px;
+}
