@@ -11,7 +11,7 @@ const AddCampusView = (props) => {
             <input type="text" name="name" placeholder="Name" required />
             <label htmlFor="description">Description: </label>
             <input type="text" name="description" placeholder="Description" required />
-            <Button id="edit-submit" variant="contained" color="primary">Submit</Button>
+            <Button type="submit" className="edit-submit" variant="contained" color="primary">Submit</Button>
         </form>
     </div>
   );

@@ -29,8 +29,7 @@ const AddStudentsView = (props) => {
                 }
                 <FormControlLabel checked={props.campusValue === null} value="" control={<Radio />} label="None" />
             </RadioGroup>
-            <Button type="submit" id="edit-submit" variant="contained" color="primary">Submit</Button>
-            <Button type="submit" id="edit-submit" variant="contained" color="primary">Submit</Button>
+            <Button type="submit" className="edit-submit" variant="contained" color="primary">Submit</Button>
         </form>
     </div>
   );

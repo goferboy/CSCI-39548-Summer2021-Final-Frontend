@@ -14,7 +14,7 @@ const EditCampusView = (props) => {
                 <label htmlFor="description">Description: </label>
                 <input type="text" name="description" onChange={props.handleChange} value={props.campus.description} />
             </div>
-            <Button id="edit-submit" variant="contained" color="primary">Submit</Button>
+            <Button type="submit" className="edit-submit" variant="contained" color="primary">Submit</Button>
             </form>
       </div>
     );
