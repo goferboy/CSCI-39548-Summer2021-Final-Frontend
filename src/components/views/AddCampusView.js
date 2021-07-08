@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import Button from '@material-ui/core/Button';
 
 const AddCampusView = (props) => {
   return (
@@ -10,7 +11,7 @@ const AddCampusView = (props) => {
             <input type="text" name="name" placeholder="Name" required />
             <label htmlFor="description">Description: </label>
             <input type="text" name="description" placeholder="Description" required />
-            <button type="submit">Submit</button>
+            <Button id="edit-submit" variant="contained" color="primary">Submit</Button>
         </form>
     </div>
   );
