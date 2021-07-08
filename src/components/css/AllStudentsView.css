@@ -1,11 +1,15 @@
 a {
+    color: black;
     text-decoration: none;
 }
 a:visited {
-    text-decoration: none;
+    color: inherit;
 }
 a:active {
-    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    text-decoration: underline;
 }
 
 #all-students {
@@ -13,6 +17,7 @@ a:active {
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
 }
 
 .student-list {
@@ -27,4 +32,13 @@ a:active {
     width: 100px;
     height: 100px;
     border-radius: 50%;
+}
+/* 
+.student-name{
+    margin: 500px;
+} */
+
+.student-text p, .student-name{
+    margin: 10px;
+    padding: 0px;
 }
