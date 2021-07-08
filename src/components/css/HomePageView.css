@@ -1,0 +1,52 @@
+hr {
+    width: 300px;
+}
+
+#home-view {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+#hunter-logo {
+    margin-top: 15px;
+}
+
+#hunter-logo, #details {
+    width: 70%;
+    max-width: 700px;
+}
+
+#session-date {
+    margin: 0;
+}
+
+#final-project, #team-members, #goal {
+    margin: 5px 0 0 0;
+}
+
+#assignment-link {
+    color: rgb(72, 33, 126);
+    text-decoration: underline;
+}
+
+#name {
+    margin: 0;
+}
+#github-info {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#github-image {
+    width: 3vw;
+    max-width: 24px;
+}
+
+#github-link {
+    text-decoration: underline;
+    margin: 0;
+    padding: 0;
+}
