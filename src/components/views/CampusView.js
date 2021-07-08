@@ -14,15 +14,15 @@ const CampusView = (props) => {
   const classes = useStyles();
   const {campus} = props;
   return (
-    <div className="campus-view">
+    <div id="campus-view">
       {
         campus.imageURL === "https://cdn.onlinewebfonts.com/svg/img_379742.png"
         ? <img id="no-campus-img" src={campus.imageURL} />
         : <img className="campus-img" src={campus.imageURL} />
       }
-      <div className="campus-text">
+      <div className="campus-view-text">
         <h1>{campus.name}</h1>
-        <h3>{campus.address}</h3>
+        <h2>{campus.address}</h2>
         <p>{campus.description}</p>
       </div>
       <p>Enrolled Students:</p>
