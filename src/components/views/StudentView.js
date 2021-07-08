@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { EditStudentContainer } from '../containers';
 import "../css/StudentView.css";
 
-//Used to add margins to Material-UI Buttons
+//Used to add margins to Material-UI Elements
 const useStyles = makeStyles(theme => ({
   root: {
     margin: "15px"
