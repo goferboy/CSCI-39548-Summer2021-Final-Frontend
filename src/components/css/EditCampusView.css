@@ -1,0 +1,11 @@
+.edit-campus {
+    width: 50vw;
+    max-width: 800px;
+}
+
+#edit-campus-form {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
