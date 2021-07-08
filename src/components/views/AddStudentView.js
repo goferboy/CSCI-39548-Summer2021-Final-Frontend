@@ -1,5 +1,3 @@
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -9,6 +7,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Radio from '@material-ui/core/Radio';
 import "../css/AddStudentView.css";
 
+//Used to add margins to Material-UI Elements
 const useStyles = makeStyles(theme => ({
   root: {
     margin: "15px"

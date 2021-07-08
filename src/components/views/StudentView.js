@@ -1,9 +1,9 @@
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom';
 import { EditStudentContainer } from '../containers';
 import "../css/StudentView.css";
 
+//Used to add margins to Material-UI Buttons
 const useStyles = makeStyles(theme => ({
   root: {
     margin: "15px"
@@ -16,6 +16,8 @@ const StudentView = (props) => {
     return (
       <div id="student-view">
         {
+          //Checks to see if student's image value is the default, 
+          //assigns different CSS tag based if it is or not
           student.imageURL === "https://cdn.onlinewebfonts.com/svg/img_210318.png"
           ? <img id="no-student-img" src={student.imageURL} />
           : <img className="student-img" src={student.imageURL} />
@@ -45,6 +47,7 @@ const StudentView = (props) => {
         </div>
         <div className="edit-form">
           {
+            //Edit Options show based on StudentView container's state.
             props.showEdit
             ? <EditStudentContainer refresh={props.refresh} showEdit={props.showEditClick} student={student}/>
             : <></>

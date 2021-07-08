@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { EditCampusContainer } from '../containers';
 import '../css/CampusView.css';
 
+//Used to add margins to Material-UI Elements
 const useStyles = makeStyles(theme => ({
   root: {
     margin: "15px"
@@ -16,6 +17,8 @@ const CampusView = (props) => {
   return (
     <div id="campus-view">
       {
+        //Checks to see if campus's image value is the default, 
+        //assigns different CSS tag based if it is or not
         campus.imageURL === "https://cdn.onlinewebfonts.com/svg/img_379742.png"
         ? <img id="no-campus-img" src={campus.imageURL} />
         : <img className="campus-img" src={campus.imageURL} />
@@ -53,6 +56,7 @@ const CampusView = (props) => {
         </Button>
       </div>
       {
+        //Edit Options show based on CampusView container's state.
         props.showEdit
         ? <EditCampusContainer refresh={props.refresh} showEdit={props.showEditClick} campus={campus}/>
         : <></>

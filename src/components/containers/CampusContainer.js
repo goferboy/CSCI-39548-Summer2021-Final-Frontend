@@ -24,12 +24,14 @@ class CampusContainer extends Component {
     })
   }
 
+  //Used to toggle show edit form for campus
   showEdit = () => {
     this.setState({
       showEdit: !this.state.showEdit
     })
   }
 
+  //After a cmpus has been edited, used to refresh with updated data
   refresh = async () => {
     await this.props.fetchCampus(this.props.match.params.id);
   }

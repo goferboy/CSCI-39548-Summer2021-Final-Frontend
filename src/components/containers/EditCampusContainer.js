@@ -17,7 +17,6 @@ class EditCampusContainer extends Component {
         const inputField = event.target.name;
         const inputValue = event.target.value;
         formCampus[inputField] = inputValue;
-        console.log(inputField + ": " + inputValue)
         this.setState({updatedCampus: formCampus});
     }
 
@@ -32,7 +31,10 @@ class EditCampusContainer extends Component {
 
     render() {
       return (
-        <EditCampusView campus={this.state.updatedCampus} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
+        <EditCampusView 
+          campus={this.state.updatedCampus} 
+          handleChange={this.handleChange} 
+          handleSubmit={this.handleSubmit}/>
       );
     }
   }
@@ -54,8 +56,6 @@ class EditCampusContainer extends Component {
   // Type check props;
     EditCampusContainer.propTypes = {
         editCampus: PropTypes.func.isRequired
-    // allCampuses: PropTypes.array.isRequired,
-    // fetchAllCampuses: PropTypes.func.isRequired,
   };
   
   // Export our store-connected container by default;

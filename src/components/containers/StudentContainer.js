@@ -17,6 +17,7 @@ class StudentContainer extends Component {
     this.props.fetchStudent(this.props.match.params.id);
   }
 
+  //handleClick() is triggered by deleting a student
   handleClick = async () => {
     await this.props.deleteStudent(this.props.match.params.id);
     this.setState({
@@ -24,12 +25,16 @@ class StudentContainer extends Component {
     })
   }
 
+  //showEdit() toggles state.showEdit to true/false
+  //used in showing edit options or not
   showEdit = () => {
     this.setState({
       showEdit: !this.state.showEdit
     })
   }
 
+  //Triggered after editing a student, re-propagates with newly
+  //updated information from the backend
   refresh = async () => {
     await this.props.fetchStudent(this.props.match.params.id);
   }

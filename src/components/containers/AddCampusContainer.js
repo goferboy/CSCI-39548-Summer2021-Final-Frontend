@@ -23,6 +23,9 @@ class AddCampusContainer extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
+    //Following code is to format "" values into null values
+    //so the backend can probably store, as well as send
+    //an imageURL property, but only if a value is provided
     let imageURLValue, descriptionValue;
     if (event.target.imageURL.value === "")
       imageURLValue = null;
@@ -39,7 +42,7 @@ class AddCampusContainer extends Component {
     };
     if (imageURLValue)
       newCampus.imageURL = imageURLValue;
-    console.log(newCampus);
+    //End of code section
     await this.props.addCampus(newCampus);
     this.setState({
       redirect: true
@@ -59,7 +62,6 @@ class AddCampusContainer extends Component {
 
 //Map state to props;
 const mapState = (state) => {
-  console.log(state);
   return {
     allCampuses: state.allCampuses,
   };

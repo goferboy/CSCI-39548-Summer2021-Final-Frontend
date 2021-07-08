@@ -13,6 +13,10 @@ class EditStudentContainer extends Component {
         }
     }
 
+    //Fetching all campuses is needed to get the most updated list
+    //of compauses for a student to attend, without needing to
+    //look at all campuses first (user can access a student
+    //from the direct url path)
     componentDidMount() {
       this.props.fetchAllCampuses();
     }
@@ -22,25 +26,28 @@ class EditStudentContainer extends Component {
         const inputField = event.target.name;
         const inputValue = event.target.value;
         formStudent[inputField] = inputValue;
+        //Properly sends null instead of "" to backend server
         if (formStudent.campusId === "")
           formStudent.campusId = null;
-        console.log(inputField + ": " + inputValue)
         this.setState({updatedStudent: formStudent});
     }
-
+    
     handleSubmit = async (event) => {
-      console.log(this.state.updatedStudent);
-        event.preventDefault();
-        await this.props.editStudent(this.state.updatedStudent);
-        //Trigger showEdit value back to false.
-        this.props.showEdit();
-        //Forces student container to refresh
-        await this.props.refresh();
+      event.preventDefault();
+      await this.props.editStudent(this.state.updatedStudent);
+      //Trigger showEdit value back to false.
+      this.props.showEdit();
+      //Forces student container to refresh
+      await this.props.refresh();
     }
 
     render() {
       return (
-        <EditStudentView student={this.state.updatedStudent} allCampuses={this.props.allCampuses} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
+        <EditStudentView 
+          student={this.state.updatedStudent} 
+          allCampuses={this.props.allCampuses} 
+          handleChange={this.handleChange} 
+          handleSubmit={this.handleSubmit}/>
       );
     }
   }

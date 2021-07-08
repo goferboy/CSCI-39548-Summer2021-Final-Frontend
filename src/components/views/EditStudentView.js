@@ -5,9 +5,9 @@ import FormLabel from '@material-ui/core/FormLabel';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Radio from '@material-ui/core/Radio';
 import { makeStyles } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom';
 import "../css/EditStudentView.css"
 
+//Used to add margins to Material-UI Elements
 const useStyles = makeStyles(theme => ({
     root: {
       margin: "15px"
@@ -64,18 +64,8 @@ const EditStudentView = (props) => {
                     className={classes.root} type="submit"
                     variant="contained" color="primary">Submit</Button>
             </form>
-            {/* <div className="form-entry">
-                <label htmlFor="firstname">First Name: </label>
-                <input type="text" name="firstname" onChange={props.handleChange} value={props.student.firstname} required />
-            </div>
-            <div className="form-entry">
-                <label htmlFor="lastname">Last Name: </label>
-                <input type="text" name="lastname" onChange={props.handleChange} value={props.student.lastname} required />
-            </div>
-            <Button type="submit" id="edit-submit" variant="contained" color="primary">Submit</Button>
-            </form> */}
         </div>
     );
-  };
+};
   
 export default EditStudentView;

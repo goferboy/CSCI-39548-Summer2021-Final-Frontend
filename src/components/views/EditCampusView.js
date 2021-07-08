@@ -1,9 +1,9 @@
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom';
 import "../css/EditCampusView.css";
 
+//Used to add margins to Material-UI Elements
 const useStyles = makeStyles(theme => ({
     root: {
       margin: "15px"
@@ -41,6 +41,6 @@ const EditCampusView = (props) => {
             </form>
         </div>
     );
-  };
+};
   
 export default EditCampusView;
