@@ -24,7 +24,12 @@ const EditStudentView = (props) => {
             <RadioGroup aria-label="campus" name="campusId" value={props.student.campusId === null ? "" : props.student.campusId} onChange={props.handleChange}>
                 {
                     props.allCampuses.map((campus) => {
-                        return(<FormControlLabel checked={parseInt(props.student.campusId) === campus.id}key={campus.id} value={campus.id} control={<Radio />} label={campus.name} />)
+                        return(<FormControlLabel 
+                            checked={parseInt(props.student.campusId) === campus.id}
+                            key={campus.id}
+                            value={campus.id}
+                            control={<Radio />}
+                            label={campus.name} />)
                     })
                 }
                 <FormControlLabel value="" control={<Radio />} label="None" />
