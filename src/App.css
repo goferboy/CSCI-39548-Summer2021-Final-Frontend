@@ -1,5 +1,6 @@
 .App {
-  background-color: #fcb6bb;
+  font-family: 'Roboto', 'sans-serif';
+  background-color: rgb(224, 255, 253);
   min-height: 100vh;
 }
 

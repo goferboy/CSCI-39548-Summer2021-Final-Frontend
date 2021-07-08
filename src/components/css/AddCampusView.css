@@ -1,0 +1,15 @@
+#add-campus {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#add-campus-form {
+    display: flex;
+    flex-flow: column nowrap;
+    
+    align-items: center;
+    width: 70%;
+    max-width: 800px;
+}

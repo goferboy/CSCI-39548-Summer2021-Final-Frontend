@@ -9,7 +9,6 @@ a:active {
 }
 
 #all-campuses {
-    font-family: 'Roboto', sans-serif;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
