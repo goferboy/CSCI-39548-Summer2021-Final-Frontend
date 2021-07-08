@@ -9,8 +9,12 @@ const AddCampusView = (props) => {
         <form onSubmit={props.handleSubmit}>
             <label htmlFor="name">Name: </label>
             <input type="text" name="name" placeholder="Name" required />
+            <label htmlFor="address">Address: </label>
+            <input type="text" name="address" placeholder="Address" required />
+            <label htmlFor="imageURL">Image URL: </label>
+            <input type="text" name="imageURL" placeholder="http://" />
             <label htmlFor="description">Description: </label>
-            <input type="text" name="description" placeholder="Description" required />
+            <input type="text" name="description" placeholder="Description" />
             <Button type="submit" className="edit-submit" variant="contained" color="primary">Submit</Button>
         </form>
     </div>

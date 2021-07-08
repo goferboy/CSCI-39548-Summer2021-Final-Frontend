@@ -15,7 +15,7 @@ const AddStudentsView = (props) => {
             <label htmlFor="firstname">First Name: </label>
             <input type="text" name="firstname" placeholder="First Name" required />
             <label htmlFor="lastname">Last Name: </label>
-            <input type="text" name="lastname" placeholder="Last Name" required />
+            <input type="text" name="lastname" placeholder="Last Name" required/>
             <RadioGroup name="campusId" value={props.campusValue} onChange={props.handleChange}>
                 {
                     props.allCampuses.map((campus) => {

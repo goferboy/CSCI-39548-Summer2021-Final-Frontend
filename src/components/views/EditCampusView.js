@@ -8,7 +8,7 @@ const EditCampusView = (props) => {
             <form id="edit-campus-form" onSubmit={props.handleSubmit}>
             <div className="form-entry">
                 <label htmlFor="name">Name: </label>
-                <input type="text" name="name" onChange={props.handleChange} value={props.campus.name} />
+                <input type="text" name="name" onChange={props.handleChange} value={props.campus.name} required/>
             </div>
             <div className="form-entry">
                 <label htmlFor="description">Description: </label>

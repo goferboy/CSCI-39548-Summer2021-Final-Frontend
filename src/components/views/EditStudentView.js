@@ -15,11 +15,11 @@ const EditStudentView = (props) => {
             <form id="edit-student-form" onSubmit={props.handleSubmit}>
             <div className="form-entry">
                 <label htmlFor="firstname">First Name: </label>
-                <input type="text" name="firstname" onChange={props.handleChange} value={props.student.firstname} />
+                <input type="text" name="firstname" onChange={props.handleChange} value={props.student.firstname} required />
             </div>
             <div className="form-entry">
                 <label htmlFor="lastname">Last Name: </label>
-                <input type="text" name="lastname" onChange={props.handleChange} value={props.student.lastname} />
+                <input type="text" name="lastname" onChange={props.handleChange} value={props.student.lastname} required />
             </div>
             <RadioGroup aria-label="campus" name="campusId" value={props.student.campusId === null ? "" : props.student.campusId} onChange={props.handleChange}>
                 {

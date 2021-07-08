@@ -23,10 +23,23 @@ class AddCampusContainer extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
+    let imageURLValue, descriptionValue;
+    if (event.target.imageURL.value === "")
+      imageURLValue = null;
+    else
+      imageURLValue = event.target.imageURL.value;
+    if (event.target.description.value === "")
+      descriptionValue = null;
+    else
+      descriptionValue = event.target.description.value;    
     let newCampus = {
         name: event.target.name.value,
-        description: event.target.description.value
+        address: event.target.address.value,
+        description: descriptionValue
     };
+    if (imageURLValue)
+      newCampus.imageURL = imageURLValue;
+    console.log(newCampus);
     await this.props.addCampus(newCampus);
     this.setState({
       redirect: true
