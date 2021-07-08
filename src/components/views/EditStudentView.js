@@ -31,6 +31,11 @@ const EditStudentView = (props) => {
                     fullWidth required/>
                 <TextField 
                     className={classes.root} 
+                    variant="outlined" label="Email" name="email"
+                    onChange={props.handleChange} value={props.student.email} 
+                    fullWidth required/>
+                <TextField 
+                    className={classes.root} 
                     variant="outlined" label="Image URL" name="imageURL"
                     onChange={props.handleChange} value={props.student.imageURL}
                     fullWidth />

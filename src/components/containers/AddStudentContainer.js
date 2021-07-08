@@ -26,11 +26,25 @@ class AddStudentContainer extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
+    let imageURLValue, gpaValue;
+    if (event.target.imageURL.value === "")
+      imageURLValue = null;
+    else
+      imageURLValue = event.target.imageURL.value;
+    if (event.target.gpa.value === "")
+      gpaValue = null;
+    else
+      gpaValue = event.target.description.value;  
     let newStudent = {
         firstname: event.target.firstname.value,
         lastname: event.target.lastname.value,
-        campusId: this.state.campusValue
+        email: event.target.email.value,
+        campusId: this.state.campusValue,
+        gpa: gpaValue
     };
+    if (imageURLValue)
+      newStudent.imageURL = imageURLValue;
+    console.log(newStudent);
     await this.props.addStudent(newStudent);
     this.setState({
       redirect: true

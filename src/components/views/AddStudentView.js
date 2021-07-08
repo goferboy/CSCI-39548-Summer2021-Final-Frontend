@@ -1,42 +1,68 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
+import TextField from '@material-ui/core/TextField';
 import RadioGroup from '@material-ui/core/RadioGroup';
+import FormLabel from '@material-ui/core/FormLabel';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Radio from '@material-ui/core/Radio';
+import "../css/AddStudentView.css";
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    margin: "15px"
+  }
+}));
 
 const AddStudentsView = (props) => {
+  const classes = useStyles();
   return (
-    <div>
-        <h1>add student</h1>
-        <form onSubmit={props.handleSubmit}>
-            <label htmlFor="firstname">First Name: </label>
-            <input type="text" name="firstname" placeholder="First Name" required />
-            <label htmlFor="lastname">Last Name: </label>
-            <input type="text" name="lastname" placeholder="Last Name" required/>
-            <RadioGroup name="campusId" value={props.campusValue} onChange={props.handleChange}>
-                {
-                    props.allCampuses.map((campus) => {
-                        return(<FormControlLabel 
-                          key={campus.id} 
-                          checked={parseInt(props.campusValue) === campus.id} 
-                          value={campus.id} 
-                          control={<Radio />} 
-                          label={campus.name} />)
-                    })
-                }
-                <FormControlLabel checked={props.campusValue === null} value="" control={<Radio />} label="None" />
-            </RadioGroup>
-            <Button type="submit" className="edit-submit" variant="contained" color="primary">Submit</Button>
-        </form>
+    <div id="add-student">
+      <h1>add student</h1>
+      <form id="add-student-form" onSubmit={props.handleSubmit}>
+        <TextField 
+            className={classes.root} 
+            variant="outlined" label="First Name" name="firstname" 
+            fullWidth required/>
+        <TextField 
+            className={classes.root} 
+            variant="outlined" label="Last Name" name="lastname" 
+            fullWidth required/>
+        <TextField 
+            className={classes.root} 
+            variant="outlined" label="Email" name="email" 
+            fullWidth required/>
+        <TextField 
+            className={classes.root} 
+            variant="outlined" label="Image URL" name="imageURL"
+            fullWidth />
+        <TextField
+            className={classes.root} 
+            type="number" InputProps={{inputProps: {min: 0, max: 4.0, step: 0.01}}}
+            variant="outlined" label="GPA" name="gpa"
+            fullWidth/>
+        <FormLabel component="legend">Campus</FormLabel>
+        <RadioGroup name="campusId" value={props.campusValue === null ? "" : props.campusValue} onChange={props.handleChange}>
+          {
+            props.allCampuses.map((campus) => {
+              return(
+                <FormControlLabel 
+                    checked={parseInt(props.campusValue) === campus.id}
+                    key={campus.id}
+                    value={campus.id}
+                    control={<Radio />}
+                    label={campus.name} />)
+            })
+          }
+          <FormControlLabel value="" control={<Radio />} label="None" />
+        </RadioGroup>
+        <Button 
+          className={classes.root} type="submit"
+          variant="contained" color="primary">Submit</Button>
+      </form>
     </div>
   );
 };
-
-// AddStudentsView.propTypes = {
-//   allStudents: PropTypes.array.isRequired,
-// };
 
 export default AddStudentsView;
