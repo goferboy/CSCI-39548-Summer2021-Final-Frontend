@@ -21,7 +21,7 @@ const AllCampusesView = (props) => {
           <img className="img-list" src={campus.imageURL} />
           <div className="campus-text">
             <Link to={`/campus/${campus.id}`}>
-              <h1>{campus.name}</h1>
+              <h1 className="campus-name">{campus.name}</h1>
             </Link>
             <p>{campus.description}</p>
           </div>
